@@ -73,7 +73,7 @@ La recherche doit être le plus souple possible. Elle ne doit pas prendre en com
 ## Instructions complémentaires
 
 #### Techno
-Django ou Rails, versions récentes.
+Rails, versions récentes.
 
 #### CSS
 Les instructions concernant les interfaces ont volontairement été omises.
@@ -103,13 +103,13 @@ Le fichier README.md doit être rempli avec, a minima :
 Une documentation plus complète est la bienvenue.
 
 
-#### Utilisation de gems / packages
+#### Utilisation de gems
 
-Les gems / packages font partie de l'écosystème Ruby / Python. Tu es donc libre d'utiliser les gems / packages que tu souhaites pour implémenter chacune des fonctionnalités à développer.
+Les gems font partie de l'écosystème Ruby. Tu es donc libre d'utiliser les gems que tu souhaites pour implémenter chacune des fonctionnalités à développer.
 
-Seule condition : chaque ajout de gem / package ne faisant pas partie d'un projet initial Rails / Django doit être documenté (en une ligne ou deux) :
-- ce que la gem / le package évite de faire à la main
-- pourquoi cette gem / ce package et pas un(e) autre (s'il y avait débat),
+Seule condition : chaque ajout de gem ne faisant pas partie d'un projet initial Rails / Django doit être documenté (en une ligne ou deux) :
+- ce que la gem évite de faire à la main
+- pourquoi cette gem et pas un(e) autre (s'il y avait débat),
 - ce que cela apporte
 - éventuellement les difficultés rencontrées
 
