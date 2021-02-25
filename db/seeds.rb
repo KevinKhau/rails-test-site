@@ -17,3 +17,6 @@ Ticket.create(title: "Angular", description: "Framework front TypeScript orient�
 Ticket.create(title: "ReactJS", description: "Framework front orienté génération HTML", status: "open", user_id: kevin.id)
 
 Comment.create(content: "Welcome! I'm the CTO, I'm in charge of this ticket.", ticket_id: simplebo.id, user_id: jeremy.id)
+Comment.create(content: "Nice to meet you.", ticket_id: simplebo.id, user_id: kevin.id)
+Comment.create(content: "Ready to help people and improve the world?", ticket_id: simplebo.id, user_id: jeremy.id)
+Comment.create(content: "Yeah, let's ruby-shine.", ticket_id: simplebo.id, user_id: kevin.id)

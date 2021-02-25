@@ -10,6 +10,7 @@
       <%= link_to 'Show Ticket', ticket_path(ticket) %>
       <div class="ticket">
         <p class="title"><%= ticket.title %></p>
+        <p class="manager"><%= ticket.manager.first_name %><%= ticket.manager.last_name %></p>
         <p class="nb_comments"><%= ticket.comments.size %></p>
         <p class="time">Créé le : <%= ticket.created_at.strftime("%F %T") %></p>
       </div>

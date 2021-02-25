@@ -5,6 +5,7 @@
       <div class="info">
         <h3 class="ticket-title"><%= @ticket.title %></h3>
         <p class="ticket-description"><%= @ticket.description %></p>
+        <p class="ticket-manager">Responsable : <%= @ticket.manager.first_name %> <%= @ticket.manager.last_name %></p>
       </div>
     </div>
 

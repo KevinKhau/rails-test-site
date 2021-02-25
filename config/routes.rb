@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'tickets/:id' => 'tickets#show', as: :ticket
   post 'tickets' => 'tickets#create'
 
+  get 'comments/new' => 'comments#new'
+
   get 'signup'  => 'users#new'
   resources :users
 
