@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="container">
+    <%= image_tag ("ticket_logo.svg"), class: "img-responsive", height: 50 %>
+    <h1>Tickets</h1>
+  </div>
+</div>
+
+<div class="tickets">
+  <div class="container">
+    <% @tickets.each do |ticket| %>
+      <%= link_to 'Show Ticket', "tickets#show" %>
+      <div class="ticket">
+        <p class="title"><%= ticket.title %></p>
+        <p class="time"><%= ticket.created_at %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

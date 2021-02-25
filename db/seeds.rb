@@ -9,3 +9,6 @@
 jeremy = User.create(first_name: 'Jérémy', last_name: 'Kenigsman', email: 'jeremy.kenigsman@simplebo.fr', password: 'qsdfghjklm')
 kevin = User.create(first_name: 'Kévin', last_name: 'Khau', email: 'kkhau@hotmail.fr', password: 'RubyOnRails')
 julian = User.create(first_name: 'Julian', last_name: 'Bueno', email: 'julian@email.com', password: 'Julian1')
+
+Ticket.create(title: "Simplébo", description: "Agence Web", status: "open", user_id: jeremy.id)
+Ticket.create(title: "Other", description: "Plus cher, plus vieux", status: "open", user_id: julian.id)
