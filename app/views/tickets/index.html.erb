@@ -1,6 +1,5 @@
 <div class="header">
   <div class="container">
-    <%= image_tag ("ticket_logo.svg"), class: "img-responsive", height: 50 %>
     <h1>Tickets</h1>
   </div>
 </div>
@@ -8,7 +7,7 @@
 <div class="tickets">
   <div class="container">
     <% @tickets.each do |ticket| %>
-      <%= link_to 'Show Ticket', "tickets#show" %>
+      <%= link_to 'Show Ticket', ticket_path(ticket) %>
       <div class="ticket">
         <p class="title"><%= ticket.title %></p>
         <p class="nb_comments"><%= ticket.comments.size %></p>
