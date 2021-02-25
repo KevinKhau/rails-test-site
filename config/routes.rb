@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'tickets#index'
   get 'tickets' => 'tickets#index'
   get 'tickets/:id' => 'tickets#show', as: :ticket
+  post 'tickets' => 'tickets#create'
 
   get 'signup'  => 'users#new'
   resources :users

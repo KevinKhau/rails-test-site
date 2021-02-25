@@ -10,5 +10,10 @@ jeremy = User.create(first_name: 'Jérémy', last_name: 'Kenigsman', email: 'jer
 kevin = User.create(first_name: 'Kévin', last_name: 'Khau', email: 'kkhau@hotmail.fr', password: 'RubyOnRails')
 julian = User.create(first_name: 'Julian', last_name: 'Bueno', email: 'julian@email.com', password: 'Julian1')
 
-Ticket.create(title: "Simplébo", description: "Agence Web", status: "open", user_id: jeremy.id)
-Ticket.create(title: "Other", description: "Plus cher, plus vieux", status: "open", user_id: julian.id)
+simplebo = Ticket.create(title: "Simplébo", description: "Agence Web", status: "open", user_id: jeremy.id)
+Ticket.create(title: "Other", description: "Plus cher, plus vieux", status: "closed", user_id: julian.id)
+Ticket.create(title: "Rails", description: "Framework Ruby full stack", status: "open", user_id: kevin.id)
+Ticket.create(title: "Angular", description: "Framework front TypeScript orienté controller", status: "closed", user_id: kevin.id)
+Ticket.create(title: "ReactJS", description: "Framework front orienté génération HTML", status: "open", user_id: kevin.id)
+
+Comment.create(content: "Welcome! I'm the CTO, I'm in charge of this ticket.", ticket_id: simplebo.id, user_id: jeremy.id)

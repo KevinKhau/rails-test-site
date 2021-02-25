@@ -11,7 +11,8 @@
       <%= link_to 'Show Ticket', "tickets#show" %>
       <div class="ticket">
         <p class="title"><%= ticket.title %></p>
-        <p class="time"><%= ticket.created_at %></p>
+        <p class="nb_comments"><%= ticket.comments.size %></p>
+        <p class="time">Créé le : <%= ticket.created_at.strftime("%F %T") %></p>
       </div>
     <% end %>
   </div>
