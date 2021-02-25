@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-jeremy = User.create(first_name: 'Jérémy', last_name: 'Kenigsman', email: 'jeremy.kenigsman@simplebo.fr', password_digest: 'qsdfghjklm')
-kevin = User.create(first_name: 'Kévin', last_name: 'Khau', email: 'kkhau@hotmail.fr', password_digest: 'RubyOnRails')
-julian = User.create(first_name: 'Julian', last_name: 'Bueno', email: 'julian@email.com', password_digest: 'Julian1')
+jeremy = User.create(first_name: 'Jérémy', last_name: 'Kenigsman', email: 'jeremy.kenigsman@simplebo.fr', password: 'qsdfghjklm')
+kevin = User.create(first_name: 'Kévin', last_name: 'Khau', email: 'kkhau@hotmail.fr', password: 'RubyOnRails')
+julian = User.create(first_name: 'Julian', last_name: 'Bueno', email: 'julian@email.com', password: 'Julian1')
