@@ -2,6 +2,10 @@
   <div class="container">
     <div class="ticket">
 
+      <div class="close">
+        <%= link_to 'Fermer ce ticket', ticket_close_path, method: 'patch' %>
+      </div>
+
       <div class="info">
         <h3 class="ticket-title"><%= @ticket.title %></h3>
         <p class="ticket-description"><%= @ticket.description %></p>

@@ -17,23 +17,17 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = Message.new(message_params)
+    @ticket = Message.new
 
     if @ticket.save
       send_email
-      redirect_to '/messages'
+      redirect_to '/tickets'
     else
       render 'new'
     end
   end
 
-  private
-  def message_params
-    params.require(:ticket).permit(:content)
-  end
-
-  private
-  def send_email
+  private def send_email
     # TODO
     ActionMailer::Base.mail(
       from: "candidature-kevin-khau@simplebo.com",
@@ -41,6 +35,11 @@ class TicketsController < ApplicationController
       subject: "test",
       body: "New comment added" << :content.to_s
     ).deliver
+  end
+
+  def update
+    Ticket.find(params[:id]).update_attribute(:status, 'closed')
+    redirect_to '/tickets'
   end
 
 end
