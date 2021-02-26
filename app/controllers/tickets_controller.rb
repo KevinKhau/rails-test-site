@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
     session[:ticket_id] = @ticket.id
-    @comments = @ticket.comments
+    @comments = @ticket.comments.order(created_at: :desc)
   end
 
   def new
