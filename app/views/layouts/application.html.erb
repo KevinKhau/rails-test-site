@@ -16,9 +16,7 @@
     <div class="header navbar">
       <div class="container">
 
-        <%= link_to root_path do %>
-          <%= image_tag ("ticket_logo.svg"), class: "img-responsive", height: 50 %>
-        <% end %>
+        <%= link_to_image("ticket_logo.svg", '/tickets') %>
 
         <div class="nav pull-right">
           <% if current_user %>
@@ -36,7 +34,6 @@
 
       </div>
     </div>
-
     <%= yield %>
 
   </body>

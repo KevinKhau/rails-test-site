@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
 
-  before_action :require_user, only: [:index, :show]
+  before_action :require_user
 
   def index
     @tickets = Ticket.select { |x| x.status == 'open' }
