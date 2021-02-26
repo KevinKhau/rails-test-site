@@ -1,4 +1,8 @@
+require 'email'
+
 class TicketsController < ApplicationController
+
+  include Email
 
   before_action :require_user
 
@@ -8,7 +12,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
-    session[:ticket_id] = @ticket.id
+    session[:ticket] = @ticket
     @comments = @ticket.comments.order(created_at: :desc)
   end
 
@@ -25,16 +29,6 @@ class TicketsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  private def send_email
-    # TODO
-    ActionMailer::Base.mail(
-      from: "candidature-kevin-khau@simplebo.com",
-      to: "kkhau@hotmail.fr",
-      subject: "test",
-      body: "New comment added" << :content.to_s
-    ).deliver
   end
 
   def update

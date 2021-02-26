@@ -1,4 +1,8 @@
+require 'email'
+
 class CommentsController < ApplicationController
+
+  include Email
 
   def new
     @comment = Comment.new
@@ -6,8 +10,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    ticket = session[:ticket]
+
+    send_email if ticket["user_id"] != session[:user_id]
+
     if @comment.save
-      redirect_to '/tickets/' + session[:ticket_id].to_s
+      redirect_to '/tickets/' + ticket["id"].to_s
     else
       render'new'
     end
@@ -17,7 +25,7 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
           .merge(user_id: session[:user_id])
-          .merge(ticket_id: session[:ticket_id])
+          .merge(ticket_id: session[:ticket]["id"])
   end
 
 end
