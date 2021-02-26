@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CandidatureKevinKhau</title>
+    <title>Gestionnaire de tickets</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- TODO: fix Webpacker::Manifest::MissingEntryError in Tickets#index-->
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
 
     <div class="header navbar">
       <div class="container">
@@ -24,7 +24,7 @@
           <% if current_user %>
             <ul>
               <li><%= current_user.email %></li>
-              <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+              <li><%= link_to "Log out", logout_path, method: 'delete' %></li>
             </ul>
           <% else %>
             <ul>

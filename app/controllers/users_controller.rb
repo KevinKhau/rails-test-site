@@ -6,10 +6,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to '/'
-    else
+    begin
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to '/'
+      else
+        redirect_to '/signup'
+      end
+    rescue => e
+      puts e.class
+      puts e.message
       redirect_to '/signup'
     end
   end

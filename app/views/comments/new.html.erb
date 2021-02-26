@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="container">
+    <%= image_tag ("comment_logo.svg"), class: "img-responsive", height: 50 %>
+    <h1>Ajouter un commentaire</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+
+    <!-- Your code here -->
+    <%= form_for(@comment) do |f| %>
+      <div class="field">
+        <%= f.label 'Commentaire' %><br>
+        <%= f.text_area :content %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Ajouter" %>
+      </div>
+    <% end %>
+  </div>
+</div>
