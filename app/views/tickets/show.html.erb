@@ -3,7 +3,7 @@
     <div class="ticket">
 
       <div class="close">
-        <%= link_to 'Fermer ce ticket', ticket_close_path, method: 'patch' %>
+        <%= link_to 'Fermer ce ticket', ticket_close_path, method: 'patch', class: "close-button" %>
       </div>
 
       <div class="info">
@@ -15,12 +15,12 @@
 
     <h2>Commentaires (<%= @comments.size %>) :</h2>
 
-    <%= link_to 'Ajouter un commentaire', ticket_comment_path%>
+    <%= link_to 'Ajouter un commentaire', ticket_comment_path, class: "add-button" %>
 
     <% @comments.each do |comment| %>
       <div class="comment">
         <p class="comment-content"><%= comment.content %></p>
-        <p>
+        <p class="comment-references">
           par <span class="comment-author"><%= comment.user.first_name %> <%= comment.user.last_name %></span>,
           le <span class="comment-created-at"><%= comment.created_at.strftime("%F %T") %></span>
         </p>

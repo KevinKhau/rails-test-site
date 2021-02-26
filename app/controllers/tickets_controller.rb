@@ -22,12 +22,9 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Message.new
-
     if @ticket.save
       send_email
       redirect_to '/tickets'
-    else
-      render 'new'
     end
   end
 

@@ -1,18 +1,13 @@
-<div class="header">
-  <div class="container">
-    <h1>Tickets</h1>
-  </div>
-</div>
-
 <div class="tickets">
+  <h1>Tickets</h1>
   <div class="container">
     <% @tickets.each do |ticket| %>
       <div class="ticket">
         <%= link_to ticket_path(ticket) do %>
           <p class="title"><%= ticket.title %></p>
         <% end %>
-        <p class="manager"><%= ticket.manager.first_name %><%= ticket.manager.last_name %></p>
         <p class="nb_comments"><%= ticket.comments.size %></p>
+        <p class="manager">Responsable : <%= ticket.manager.first_name %> <%= ticket.manager.last_name %></p>
         <p class="time">Créé le : <%= ticket.created_at.strftime("%F %T") %></p>
       </div>
     <% end %>

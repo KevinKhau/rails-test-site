@@ -1,3 +1,82 @@
 // Place all the styles related to the tickets controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.tickets, .create {
+  margin: 40px 0;
+}
+
+.add-button,
+.tickets a,
+.create .actions input {
+  background-color: #f2580b;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ticket {
+  position: relative;
+  background-color: #fff;
+  font-weight: 300;
+  padding: 16px;
+  margin-bottom: 10px;
+  width: 450px;
+}
+
+.comment-references,
+p.time {
+  color: #0084d7;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+button {
+  background-color: #f2580b;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: #c24609;
+  transition: background-color 0.5s;
+}
+
+.nb_comments {
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  background: red;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .tickets, .create {
+    padding: 0 20px;
+  }
+}
