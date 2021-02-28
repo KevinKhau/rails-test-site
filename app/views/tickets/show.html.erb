@@ -15,7 +15,21 @@
 
     <h2>Commentaires (<%= @comments.size %>) :</h2>
 
-    <%= link_to 'Ajouter un commentaire', ticket_comment_path, class: "add-button" %>
+    <div class="create">
+      <div class="container">
+        <!-- Your code here -->
+        <%= form_for(@comment_add) do |f| %>
+          <div class="field">
+            <%= f.label 'Commentaire' %><br>
+            <%= f.text_area :content %>
+            <%= f.hidden_field :ticket_id, value: params["id"] %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Ajouter" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
     <% @comments.each do |comment| %>
       <div class="comment">

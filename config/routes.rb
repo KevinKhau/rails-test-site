@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   get 'tickets/:id/close' => 'tickets#update', as: :ticket_close #quickfix
   # patch 'tickets/:id' => 'tickets#update', as: :ticket_close
 
-  get 'tickets/:id/comments' => 'comments#new', as: :ticket_comment
+  # TODO :id -> :ticket_id
+  get 'tickets/:id/comments/new' => 'comments#new', as: :ticket_comment
   post 'comments' => 'comments#create'
 
-  get 'signup'  => 'users#new'
   resources :users
+
+  get 'signup'  => 'users#new'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
