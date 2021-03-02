@@ -8,10 +8,6 @@ class TicketsController < ApplicationController
 
   def index
     @tickets = Ticket.where(status: "open")
-    tickets_grouped_by_managers = Ticket.group(:user_id).order('count_all asc').count
-                                    # .group_by{|k, v| v}.min_by(&:first).last
-
-    puts tickets_grouped_by_managers
   end
 
   def show
@@ -25,9 +21,10 @@ class TicketsController < ApplicationController
   end
 
   def create
-    tickets_grouped_by_managers = Ticket.group(:user_id).count
-    puts tickets_grouped_by_managers
-    target_user = User.group(:user_id).count
+    managers_with_min_open_tickets = Ticket.all.group_by{|t| t.user_id}
+                                           .map{|k,v| [k,v.filter{|x| x.status == 'open'}.length]}.to_h
+                                           .group_by{|_,v| v}.min[1].map{|v| v[0]}
+    manager = managers_with_min_open_tickets.sample
     @ticket = Message.new
     if @ticket.save
       send_email

@@ -11,7 +11,7 @@
       <div class="field">
         <%= f.label 'Commentaire' %><br>
         <%= f.text_area :content %>
-        <%= f.hidden_field :ticket_id, value: params["id"] %>
+        <%= f.hidden_field :ticket_id, value: params[:id] %>
       </div>
       <div class="actions">
         <%= f.submit "Ajouter" %>

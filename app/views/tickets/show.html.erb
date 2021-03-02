@@ -2,9 +2,11 @@
   <div class="container">
     <div class="ticket">
 
+      <% if @ticket.manager.id == session[:user_id] -%>
       <div class="close">
         <%= link_to 'Fermer ce ticket', ticket_close_path, method: 'patch', class: "close-button" %>
       </div>
+      <% end -%>
 
       <div class="info">
         <h3 class="ticket-title"><%= @ticket.title %></h3>
@@ -17,12 +19,11 @@
 
     <div class="create">
       <div class="container">
-        <!-- Your code here -->
         <%= form_for(@comment_add) do |f| %>
           <div class="field">
             <%= f.label 'Commentaire' %><br>
             <%= f.text_area :content %>
-            <%= f.hidden_field :ticket_id, value: params["id"] %>
+            <%= f.hidden_field :ticket_id, value: params[:id] %>
           </div>
           <div class="actions">
             <%= f.submit "Ajouter" %>

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'tickets#index'
 
   get '/tickets' => 'tickets#index'
-  get 'tickets/:id' => 'tickets#show', as: :ticket
+  get 'tickets/:id' => 'tickets#show', as: :ticket do
+
+  end
   post 'tickets' => 'tickets#create'
   get 'tickets/:id/close' => 'tickets#update', as: :ticket_close #quickfix
   # patch 'tickets/:id' => 'tickets#update', as: :ticket_close
