@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7377dd9d-fe85-4109-baa2-67db986b542c" name="kevin-simplebo" url="https://kevinkhau.recrutement.simplebo.net">
+        <fileTransfer rootFolder="/home/kevinkhau" accessType="SFTP" host="ssh-kevinkhau.alwaysdata.net" port="22" sshConfigId="0820e9ed-5ee9-4845-b2c6-1db92f67273c" sshConfig="kevinkhau@ssh-kevinkhau.alwaysdata.net:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
